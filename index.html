@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScreenScout</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a href="./index.html" class="brand-lockup">
+          <div class="brand-mark">⌕</div>
+          <div>
+            <p class="brand-name">ScreenScout</p>
+          </div>
+        </a>
+        <div class="watchlist-pill">
+          Watchlist <span class="watchlist-count">0</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="container page-shell">
+      <section class="spotlight card">
+        <div class="spotlight-copy">
+          <h1>Your Favourite Movies at one place.</h1>
+          <p class="spotlight-text"></p>
+
+          <form onsubmit="onSearchSubmit(event)" class="search-form">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search films, series, episodes..."
+              aria-label="Search titles"
+            />
+            <button type="submit" class="primary-button">Search</button>
+          </form>
+
+          <div class="recent-searches hidden">
+            <p class="eyebrow">Recent searches</p>
+            <div class="chip-row recent-search-list"></div>
+          </div>
+        </div>
+
+        <div class="spotlight-panel">
+          <div class="stat-card">
+            <span class="stat-label">Results</span>
+            <strong class="results-count">0</strong>
+            <p>Fresh matches loaded from OMDb</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="results-section stack-lg">
+        <div class="results-toolbar card">
+          <div>
+            <p class="eyebrow">Explore</p>
+            <h2>Browse titles without losing your place.</h2>
+          </div>
+
+          <div class="toolbar-actions">
+            <label class="toggle-pill">
+              <input type="checkbox" onchange="toggleWatchlistOnly(event)" />
+              <span>Watchlist only</span>
+            </label>
+
+            <select onchange="onSortChange(event)">
+              <option value="relevance">Relevance</option>
+              <option value="year-desc">Newest</option>
+              <option value="year-asc">Oldest</option>
+              <option value="title-asc">A → Z</option>
+              <option value="title-desc">Z → A</option>
+              <option value="type">Type</option>
+            </select>
+          </div>
+        </div>
+
+        <p class="error-banner hidden"></p>
+
+        <section class="results-grid movie-list"></section>
+
+        <section class="empty-state card">
+          <div class="empty-icon">⌕</div>
+          <h3>Nothing to show yet</h3>
+          <p>Try a search like Interstellar, The Bear, or Sherlock.</p>
+        </section>
+      </section>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
