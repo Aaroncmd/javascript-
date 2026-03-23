@@ -1,6 +1,4 @@
-# ScreenScout Vanilla JS
-
-A vanilla JavaScript movie site built from the same two-page flow and DOM-rendering style as the old `user-posts` project, but adapted to match the ScreenScout React app.
+# ScreenScout JS
 
 ## Pages
 - `index.html` — search, sort, watchlist filter, recent searches, result cards
